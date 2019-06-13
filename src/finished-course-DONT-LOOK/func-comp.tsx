@@ -11,7 +11,7 @@ export const MyFunctionalComponent = (props: IMyClassComponentProps) => {
   // TODO: Add another prop and see that the lint fails
   React.useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6088f2500a16b34a3f7c37f217c9cab4`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=your_api_key`
     )
       .then(res => {
         return res.json();
@@ -29,7 +29,7 @@ export const MyFunctionalComponent = (props: IMyClassComponentProps) => {
       });
   }, [props.fahrenheit, city]);
 
-  const onChange = event => {
+  const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setCity(event.target.value);
   };
 

@@ -13,8 +13,8 @@ export class MyClassComponent extends React.Component {
   getWeather = () => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${
-        this.state.city
-      }&appid=6088f2500a16b34a3f7c37f217c9cab4`
+      this.state.city
+      }&appid=your_api_key`
     )
       .then(res => {
         return res.json();
@@ -25,7 +25,7 @@ export class MyClassComponent extends React.Component {
       });
   };
 
-  private onChange = event => {
+  private onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState({ city: event.target.value });
     this.getWeather();
   };
